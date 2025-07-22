@@ -3,7 +3,7 @@ const express = require('express');
 const connectDB = require('./config/db');
 
 // Import the way you know how to here
-import Routes from './routes/index.js';
+import routes from './routes/index.js';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5000;
 connectDB();
 
 // Define routes
-app.use(Routes);
+app.use(routes);
 
 app.get('/', (req, res) => res.send('API running'));
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
