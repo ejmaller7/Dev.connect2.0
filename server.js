@@ -11,6 +11,9 @@ const PORT = process.env.PORT || 5000;
 // Connect DB
 connectDB();
 
+// Initialize the middleware
+app.use(express.json({ extended: false }));
+
 // Define routes
 app.use(routes);
 
