@@ -1,14 +1,20 @@
 // ES5 way of importing necessary modules into a project
 const express = require('express');
 const router = express.Router();
+const { check, validationResult } = require('express-validator');
+const gravatar = require('gravatar');
+const bcrypt = require('bcryptjs');
+const config = require('config');
+const jwt = require('jsonwebtoken');
+const User = require('../../models/User');
 
 // ES6 way of importing necessary modules into a project
-import { check, validationResult } from 'express-validator/check';
-import gravatar from 'gravatar';
-import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
-import User from '../../models/User';
-import config from '../../config';
+// import { check, validationResult } from 'express-validator/check';
+// import gravatar from 'gravatar';
+// import bcrypt from 'bcryptjs';
+// import jwt from 'jsonwebtoken';
+// import User from '../../models/User';
+// import config from '../../config';
 
 // @route   POST api/users
 // @desc    Register user

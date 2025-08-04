@@ -1,14 +1,20 @@
 // ES5 way of importing necessary modules into a project
 const express = require('express');
 const router = express.Router();
+const { check, validationResult } = require('express-validator');
+const request = require('request');
+const config = require('config');
+const auth = require('../../middleware/auth');
+const User = require('../../models/User');
+const Profile = require('../../models/Profile');
 
 // ES6 way of importing necessary modules into a project
-import { check, validationResult } from 'express-validator/check';
-import request from 'request';
-import config from '../../config';
-import auth from '../../middleware/auth';
-import Profile from '../../models/Profile';
-import User from '../../models/User';
+// import { check, validationResult } from 'express-validator/check';
+// import request from 'request';
+// import config from '../../config';
+// import auth from '../../middleware/auth';
+// import Profile from '../../models/Profile';
+// import User from '../../models/User';
 
 // @route   GET api/profile/me
 // @desc    Get current user's profile

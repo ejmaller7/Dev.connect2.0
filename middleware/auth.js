@@ -1,6 +1,10 @@
+// ES5 way is the only way for this project to function
+const jwt = require('jsonwebtoken');
+const config = require('config');
+
 // Continue to use ES6 way of importing modules
-import jwt from 'jsonwebtoken';
-import config from '../config';
+// import jwt from 'jsonwebtoken';
+// import config from '../config';
 
 module.exports = function(req, res, next) {
     // Get token from the header

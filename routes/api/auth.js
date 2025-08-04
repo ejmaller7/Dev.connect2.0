@@ -1,14 +1,20 @@
 // ES5 way of importing necessary modules into a project
 const express = require('express');
 const router = express.Router();
+const auth = require('../../middleware/auth');
+const User = require('../../models/User');
+const { check, validationResult } = require('express-validator');
+const bcrypt = require('bcryptjs');
+const config = require('config');
+const jwt = require('jsonwebtoken');
 
 // ES6 way of importing necessary modules into a project
-import auth from '../../middleware/auth';
-import User from '../../models/User';
-import { check, validationResult } from 'express-validator/check';
-import bcrypt from 'bcryptjs';
-import config from '../../config';
-import jwt from 'jsonwebtoken';
+// import auth from '../../middleware/auth';
+// import User from '../../models/User';
+// import { check, validationResult } from 'express-validator/check';
+// import bcrypt from 'bcryptjs';
+// import config from '../../config';
+// import jwt from 'jsonwebtoken';
 
 // @route   GET api/auth
 // @desc    Get user without displaying password

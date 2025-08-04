@@ -1,9 +1,10 @@
 // Imports here - different from what you initially learned but I believe this is the older version
 const express = require('express');
 const connectDB = require('./config/db');
+const routes = require('./routes/index.js');
 
 // Import the way you know how to here
-import routes from './routes/index.js';
+// import routes from './routes/index.js';
 
 const app = express();
 const PORT = process.env.PORT || 5000;

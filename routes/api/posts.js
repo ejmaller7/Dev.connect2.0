@@ -1,13 +1,19 @@
 // Once again, this is the ES5 way of importing
 const express = require('express');
 const router = express.Router();
+const { check, validationResult } = require('express-validator');
+const auth = require('../../middleware/auth');
+const User = require('../../models/User');
+const Post = require('../../models/Post');
+const Profile = require('../../models/Profile');
+
 
 // ES6 way of importing modules
-import { check, validationResult } from 'express-validator/check';
-import auth from '../../middleware/auth';
-import Post from '../../models/Post';
-import Profile from '../../models/Profile';
-import User from '../../models/User';
+// import { check, validationResult } from 'express-validator/check';
+// import auth from '../../middleware/auth';
+// import Post from '../../models/Post';
+// import Profile from '../../models/Profile';
+// import User from '../../models/User';
 
 // @route   POST api/posts
 // @desc    Create a post
