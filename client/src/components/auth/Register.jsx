@@ -89,4 +89,5 @@ Register.propTypes = {
   setAlert: PropTypes.func.isRequired,
 };
 
+{/* Everytime you use connect, there is two criteria you need. In this case, one of them is null */}
 export default connect(null, {setAlert})(Register);
