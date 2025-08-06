@@ -45,8 +45,8 @@ git clone https://github.com/your-username/dev.connect2.0.git
 cd dev.connect2.0
 ```
 
-2. Clone the repository:
 # For both client and server
+2. Clone the repository:
 ```bash
 npm install
 cd client && npm install
@@ -58,8 +58,8 @@ MONGO_URI=your_mongo_db_connection_string
 JWT_SECRET=your_jwt_secret
 ```
 
-4. Run the app
 # From root directory
+4. Run the app
 ```bash
 npm run dev
 ```
