@@ -1,3 +1,4 @@
+// Defines the logic for displaying and automatically removing alert messages in the Redux-managed React application
 import { v4 as uuidv4 } from 'uuid';
 import { SET_ALERT, REMOVE_ALERT } from "./types";
 

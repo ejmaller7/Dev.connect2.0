@@ -1,3 +1,4 @@
+// Defines and exports constant action type identifiers to ensure consistency and prevent typos when dispatching or handling actions related to alerts & user authentication
 export const SET_ALERT = 'SET_ALERT';
 export const REMOVE_ALERT = 'REMOVE_ALERT';
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
