@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { setAlert } from '../../actions/alert';
@@ -32,9 +32,11 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   }
 
   // Redirect if logged in
-  if(isAuthenticated) {
-    navigate('/dashboard');
-  }
+  useEffect(() => {
+    if(isAuthenticated) {
+      navigate('/dashboard');
+    }
+  }, [isAuthenticated, navigate]);
 
   return (
   <Fragment>
@@ -103,5 +105,4 @@ const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated
 });
 
-{/* Everytime you use connect, there is two criteria you need. In this case, one of them is null */}
 export default connect(mapStateToProps, {setAlert, register})(Register);

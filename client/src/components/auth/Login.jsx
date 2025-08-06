@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 // Redux
@@ -25,9 +25,11 @@ const Login = ({ login, isAuthenticated }) => {
   };
 
   // Redirect if logged in
-  if(isAuthenticated) {
-    navigate('/dashboard');
-  }
+  useEffect(() => {
+    if(isAuthenticated) {
+      navigate('/dashboard');
+    }
+  }, [isAuthenticated, navigate]);
 
   return (
   <Fragment>
