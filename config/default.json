@@ -1,6 +1,0 @@
-{
-    "mongoURI": "mongodb+srv://ejmaller7:ethanj78@first-cluster.ufppz.mongodb.net/?retryWrites=true&w=majority&appName=First-Cluster",
-    "jwtSecret": "mysecrettoken",
-    "githubClientId": "Ov23lisMRsd1nGDjqYVF",
-    "githubSecret": "c4bacc4b01f8c8edfd82fc1da12df10a511cc44c"
-}
