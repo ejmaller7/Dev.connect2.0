@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
-import Moment from 'moment';
+import Moment from 'react-moment';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 
 const Experience = ({ experience }) => {
     const experiences = experience.map(exp => (
@@ -44,4 +43,4 @@ Experience.propTypes = {
     experience: PropTypes.array.isRequired,
 }
 
-export default connect(null, {})(Experience);
+export default Experience;
