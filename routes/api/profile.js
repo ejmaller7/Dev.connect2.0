@@ -7,6 +7,7 @@ const config = require('config');
 const auth = require('../../middleware/auth');
 const User = require('../../models/User');
 const Profile = require('../../models/Profile');
+const Post = require('../../models/Post');
 
 // ES6 way of importing necessary modules into a project
 // import { check, validationResult } from 'express-validator/check';
@@ -162,7 +163,8 @@ router.get('/user/:user_id', async (req, res) => {
 // @access  Private
 router.delete('/', auth, async (req, res) => {
     try {
-        // @todo - remove users posts
+        // Remove users posts
+        await Post.deleteMany({ user: req.user.id });
 
         // Remove profile
         await Profile.findOneAndRemove({ user: req.user.id });
@@ -234,7 +236,7 @@ async (req, res) => {
 // @access  Private
 router.delete('/experience/:exp_id', auth, async (req, res) => {
     try {
-        const profile = await Profile.findOne({ user: req.body.user });
+        const profile = await Profile.findOne({ user: req.user.id });
 
         // Get remove index
         const removeIndex = profile.experience
@@ -309,7 +311,7 @@ async (req, res) => {
 // @access  Private
 router.delete('/education/:edu_id', auth, async (req, res) => {
     try {
-        const profile = await Profile.findOne({ user: req.body.user });
+        const profile = await Profile.findOne({ user: req.user.id });
 
         // Get remove index
         const removeIndex = profile.education
