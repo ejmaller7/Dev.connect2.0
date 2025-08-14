@@ -41,7 +41,7 @@ const EditProfile = ({ profile: { profile, loading },createProfile, getCurrentPr
             youtube: loading || !profile.social ? '' : profile.social.youtube,
             instagram: loading || !profile.social ? '' : profile.social.instagram
         });
-    }, [loading]);
+    }, [loading, getCurrentProfile]);
 
     // Destructuring the formData so we can access all of these fields easily
     const { company, website, location, status, skills, githubusername, bio, twitter, facebook, linkedin, youtube, instagram } = formData;
