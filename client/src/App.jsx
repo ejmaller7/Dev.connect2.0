@@ -14,6 +14,7 @@ import EditProfile from './components/profile-forms/EditProfile';
 import AddExperience from './components/profile-forms/AddExperience';
 import AddEducation from './components/profile-forms/AddEducation';
 import './App.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 // Redux
 import { Provider } from 'react-redux';
