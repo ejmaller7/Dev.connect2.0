@@ -23,7 +23,7 @@ const ProfileTop = ({ profile: {status, company, location, website, social, user
                     <i className="fab fa-twitter fa-2x"></i>
                 </a>
             )}
-            {social & social.facebook && (
+            {social && social.facebook && (
                 <a href={social.facebook} target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-facebook fa-2x"></i>
                 </a>
