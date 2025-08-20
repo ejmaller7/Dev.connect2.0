@@ -13,6 +13,7 @@ import CreateProfile from './components/profile-forms/CreateProfile';
 import EditProfile from './components/profile-forms/EditProfile';
 import AddExperience from './components/profile-forms/AddExperience';
 import AddEducation from './components/profile-forms/AddEducation';
+import Posts from './components/posts/Posts';
 import './App.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
@@ -53,6 +54,7 @@ const App = () => {
                 <Route path='/edit-profile' element={<EditProfile />} />
                 <Route path='/add-experience' element={<AddExperience />} />
                 <Route path='/add-education' element={<AddEducation />} />
+                <Route path='/posts' element={<Posts />} />
               </Route>
             </Routes>
           </section>
