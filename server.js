@@ -14,17 +14,17 @@ const PORT = process.env.PORT || 5000;
 connectDB();
 
 // Initialize the middleware
-app.use(express.json({ extended: false }));
+app.use(express.json());
 
 // Define routes
 app.use(routes);
 
 // Serve static assets in production
-if(process.env.NODE_ENV === 'default') {
+if(process.env.NODE_ENV === 'production') {
     // Set static folder
-    app.use(express.static(path.join('client/build')));
+    app.use(express.static(path.join(__dirname, 'client', 'build')));
 
-    app.get('/*)', (req, res) => {
+    app.get(/^\/(?!api).*/, (req, res) => {
         res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
     });
 }
