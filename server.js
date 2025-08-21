@@ -2,6 +2,7 @@
 const express = require('express');
 const connectDB = require('./config/db');
 const routes = require('./routes/index.js');
+const path = require('path');
 
 // Import the way you know how to here
 // import routes from './routes/index.js';
@@ -18,5 +19,14 @@ app.use(express.json({ extended: false }));
 // Define routes
 app.use(routes);
 
-app.get('/', (req, res) => res.send('API running'));
+// Serve static assets in production
+if(process.env.NODE_ENV === 'production') {
+    // Set static folder
+    app.use(express.static('client/build'));
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+    });
+}
+
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
